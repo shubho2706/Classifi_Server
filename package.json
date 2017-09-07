@@ -1,0 +1,11 @@
+{
+  "name": "Classifi_Server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubho2706/Classifi_Server.git"
+  }
+}
