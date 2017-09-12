@@ -20,7 +20,8 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-    res.send('Hello Ponu, Happy Birthday');
+    //res.send('Hello Ponu, Happy Birthday');
+    res.sendFile('event.html',{root: "." });
 })
 
 var server = app.listen(process.env.PORT ||8081, function () {
