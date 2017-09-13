@@ -1,32 +1,25 @@
-// var https = require("https");
-// var server = http.createServer(function(request, response) {
-//     response.writeHead(200, {"Content-Type": "text/html"});
-//     response.write("<!DOCTYPE html>");
-//     response.write("<html>");
-//     response.write("<head>");
-//     response.write("<title>Hello World Page</title>");
-//     response.write("</head>");
-//     response.write("<body>");
-//     response.write("Hello World!");
-//     response.write("</body>");
-//     response.write("</html>");
-//     response.end();
-// });
-//
-// server.listen(8080);
-// console.log("Server is listening");
+
 
 var express = require('express');
 var app = express();
+var router=require('./route.js');
 
-app.get('/', function (req, res) {
-    //res.send('Hello Ponu, Happy Birthday');
-    res.sendFile('event.html',{root: "." });
-})
 
-var server = app.listen(process.env.PORT ||8081, function () {
-    var host = server.address().address
-    var port = server.address().port
+
+
+app.use('/',router);
+app.use('/login',router);
+app.use('/signup',router);
+
+// app.use(express.static('res'));
+// app.use(express.static('img'));
+
+
+
+var server = app.listen(process.env.PORT ||8000, function () {
+    var host = server.address().address;
+    var port = server.address().port;
 
     console.log("Example app listening at http://%s:%s", host, port)
-})
+});
+
