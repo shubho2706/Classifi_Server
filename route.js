@@ -3,7 +3,7 @@ var router = express.Router();
 
 // Home page route
 router.get('/', function(req, res) {
-    res.send('home page');//TODO: sent the home.html file here
+    res.sendFile('home.html',{root:'res/html'});
 });
 router.get('/login',function (req,res) {
     res.send('login page');
